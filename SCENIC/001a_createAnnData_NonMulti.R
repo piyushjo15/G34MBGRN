@@ -18,19 +18,11 @@ suppressPackageStartupMessages({
 Sample <- "SA194"
 RNA_Sample <- "SN407"
 
-# Define the folder path and name
-DIR = "~/Ana/ATACana/SCENIC/"
-folder_path <- paste0(DIR,"RNA/",Sample,"/")
+DIR_RNA <- "RNA/"
 
-# Check if the folder already exists
-if (!file.exists(folder_path)){
-  dir.create(folder_path)
-}
-
-setwd(paste0(DIR,"RNA/",Sample,"/"))
 
 ##loading log normalized RNA data, no imputed cells in this sample
-seRNA <- get(load(paste0(Sample,"_SCE.RData"))) 
+seRNA <- get(load(paste0(DIR_RNA,Sample,"/",Sample,"_SCE.RData"))) 
 
 ## combined tumor single-cell HVG list
 com.hvg <- readLines("Files/topHVGG34new10xnoRPMTSX.txt") #com.hvg
@@ -39,7 +31,7 @@ com.hvg <- readLines("Files/topHVGG34new10xnoRPMTSX.txt") #com.hvg
 ############ add missing information and filter for ATAC cells ###############
 
 #remove normal cells from sceRNA
-remove_cells <- readLines(paste0("normal_cells/",Sample,"_normal_cells.txt"))
+remove_cells <- readLines(paste0(DIR_RNA,"normal_cells/",Sample,"_normal_cells.txt"))
 
 print("Number of normal cells")
 length(normal_cells)
@@ -60,7 +52,7 @@ seRNA <- seRNA[rownames(seRNA) %in% com.hvg,]
 
 #save seRNA used for SCENIC+
 print("Saving seRNA object used for SCENIC+")
-save(seRNA, file = "seRNA_SCENIC.RData")
+save(seRNA, file = paste0(DIR_RNA,Sample,"/",Sample,"_seRNA_SCENIC.RData"))
 
 
 ############ cp the ind_cluster as a new column naming predictedGroup (to have the same name as in ATAC data)
@@ -94,7 +86,7 @@ from scipy import io
 import os
 
 Sample = r.Sample
-projDir = os.path.join("SCENIC/RNA/",Sample)
+projDir = os.path.join("SCENIC/output/RNA/",Sample)
 
 #log count Matrix 
 counts = r.a

@@ -18,30 +18,25 @@ args <- commandArgs(TRUE)
 Sample <- args[1]
 RNA_Sample <- gsub("MSM","MSN",Sample)
 
+DIR_RNA <- "RNA/"
+DIR_ATAC <- "ATAC/
+"
 ##loading log normalized RNA data including imputed ATAC cells
-seRNA <- get(load(paste0(Sample,"_imputed_SCE.RData"))) 
+seRNA <- get(load(paste0(DIR_RNA,Sample,"/",Sample,"_imputed_SCE.RData"))) 
 
 ## combined tumor single-cell HVG list
 com.hvg <- readLines("Files/topHVGG34new10xnoRPMTSX.txt") #com.hvg
 
 #load post-QC ATAC data, per sample
-proj <- loadArchRProject(path = Sample)
+proj <- loadArchRProject(path = paste0(DIR_ATAC,Sample))
 
-DIR = "~/SCENIC/output"
-folder_path <- paste0(DIR,"RNA/",Sample,"/")
-
-# Check if the folder already exists
-if (!file.exists(folder_path)){
-  dir.create(folder_path)
-}
-
-setwd(paste0(DIR,"RNA/",Sample,"/"))
+DIR_SCENIC = "SCENIC/output"
 
 #convert RNA SCE to Scanpy AnnData
 ############ add missing information and filter for ATAC cells ###############
 
 #remove normal cells from sceRNA
-remove_cells <- readLines(paste0("normal_cells/",Sample,"_normal_cells.txt"))
+remove_cells <- readLines(paste0(DIR_RNA,"normal_cells/",Sample,"_normal_cells.txt"))
 
 print("Number of normal cells")
 length(remove_cells)
@@ -86,7 +81,7 @@ seRNA$Clusters_Combined <- clusterinfo$Clusters_Combined
 
 #save seRNA used for SCENIC+
 print("Saving seRNA object used for SCENIC+")
-save(seRNA, file = "seRNA_SCENIC.RData")
+save(seRNA, file = paste0(DIR_RNA,Sample,"/",Sample,"_seRNA_SCENIC.RData"))
 
 ############# step-by-step to Anndata ###############
 
@@ -114,7 +109,7 @@ from scipy import io
 import os
 
 Sample = r.Sample
-projDir = os.path.join("SCENIC/RNA/",Sample)
+projDir = os.path.join("SCENIC/output/RNA/",Sample)
 
 #log count Matrix 
 counts = r.a
