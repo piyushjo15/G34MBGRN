@@ -1,8 +1,8 @@
 ## This scripts converts the RNA RData into python anData, that will be used as 
 ## SCENIC+ input
 library(reticulate)
-Sys.setenv(RETICULATE_PYTHON = "/home/ad.dkfz-heidelberg.de/t716r/.conda/envs/scenicplus/bin/python3.8")
-use_python("/home/ad.dkfz-heidelberg.de/t716r/.conda/envs/scenicplus/bin/python3.8")
+Sys.setenv(RETICULATE_PYTHON = "~/path/to/python3.7")
+use_python("~/path/to/python3.7")
 
 suppressPackageStartupMessages({
   library(ArchR)
