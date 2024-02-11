@@ -82,6 +82,8 @@ nonimputed_obj.feature_names = list(np.array(nonimputed_obj.feature_names)[~np.a
 normalized_imputed_acc_obj = normalize_scores(nonimputed_obj, scale_factor=10**4)
 variable_regions = find_highly_variable_features(normalized_imputed_acc_obj, plot = False)
 markers_dict = find_diff_features(cistopic_obj, nonimputed_obj, variable='Clusters_Combined', var_features=variable_regions, split_pattern = '-')
+##lowered filtering cut-off value
+#markers_dict = find_diff_features(cistopic_obj, nonimputed_obj, variable='Clusters_Combined', var_features=variable_regions,log2fc_thr=0.1,adjpval_thr=0.5, split_pattern = '-')
 
 #Save Results
 if not os.path.exists(os.path.join(projDir, 'candidate_enhancers')):
