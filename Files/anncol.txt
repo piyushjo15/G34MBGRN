@@ -1,0 +1,11 @@
+Annotation	Color
+MYC	#f7059d
+MYC_CC	#FF6A6A
+PR_def	#990505
+PR_early	#fa0202
+PR_early_MYC	#fa8202
+Prec_CC	#b174f2
+Precursors	#4a0385
+UBC_early	#ffbd7a
+UBC_late	#b05c07
+

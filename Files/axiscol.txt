@@ -1,0 +1,6 @@
+Axis	Color
+MYC	#f7059d
+PR	#990505
+Precursors	#4a0385
+UBC	#b05c07
+
