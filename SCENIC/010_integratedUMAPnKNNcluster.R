@@ -36,6 +36,7 @@ del1 <- umap(rd, n_components = 2, min_dist = 0.4, metric = "cosine", n_neighbor
 colnames(del1) <-  c("nfUMAP1","nfUMAP2")
 set.seed(134)
 plot.data.com <- cbind(plot.data.com,del1)
+save(rd, plot.data.com, file=paste0(DIR_GRN,"pdG34MB_G34GRN_AUC_NMF.RData"))
 
 ##python run for KNN-leiden clustering------
 
