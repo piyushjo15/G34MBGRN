@@ -81,7 +81,8 @@ for(y in regs_com){
 }
 rm(y)
 lengths(regs)
-save(regs, file = paste0(DIR_GRNana,"TFselcl_GRN_AUC_G34MB.RData"))
+GSEA <- regs
+save(GSEA, file = paste0(DIR_GRNana,"TFselcl_GRN_AUC_G34MB.RData"))
 ##finding jaccard and overlap index for identified GRN sets
 library(RColorBrewer)
 jaccard <- function(a, b) {
