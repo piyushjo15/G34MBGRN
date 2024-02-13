@@ -1,0 +1,5 @@
+Subtype	Color
+A1905	sienna1
+Eurofins	sienna1
+ICGC	plum2
+MDT	purple
