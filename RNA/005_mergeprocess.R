@@ -43,7 +43,7 @@ for(x in sams){
   plot.data <- rbind(plot.data,del[,cl])
   rm(del,del2,sce)
 }
-save(plot.data, file="plotdataMB.RData")
+save(plot.data, file="plotdataG34MB.RData")
 
 ##here I am trying to find 1op HVGs from each and combine them------
 # load("comdatadec.RData")
@@ -71,7 +71,7 @@ save(plot.data, file="plotdataMB.RData")
 #   com.sce_cnnc <- cbind(com.sce_cnnc,del)
 #   rm(del,sce)
 # }
-# save(com.sce_cnnc, com.hvg, file="cosnormHB.RData")
+# save(com.sce_cnnc, com.hvg, file="cosnormG34.RData")
 # dim(com.sce_cnnc)
 # rm(com.sce_cnnc)
 # q()
@@ -80,7 +80,7 @@ save(plot.data, file="plotdataMB.RData")
 # # #combine counts
 # # com.sce <- do.call(noCorrect,list.append(all.sce, assay.type = "counts"))
 # # assayNames(com.sce) <- "counts"
-# # save(com.sce, file = "combinedcountsHB.RData")
+# # save(com.sce, file = "combinedcountsG34.RData")
 # # rm(com.sce)
 # # 
 # #MBN
