@@ -23,7 +23,7 @@ rm(dec.list)
 sams <- unique(plot.data.MB$Batch) ##tumor samples
 #v2
 common.genes <- readLines("Files/topHVGHUMCBnoccSX.txt")
-com.hvg <- lreadLines("Files/topHVGG34new10xnoRPMTSX.txt")
+com.hvg <- readLines("Files/topHVGG34new10xnoRPMTSX.txt")
 com.hvg <- intersect(common.genes[1:5000],com.hvg)
 # 
 sams2 <- names(CBsce.list)
