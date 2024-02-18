@@ -163,13 +163,6 @@ save(plot.data, pd_test, pd,  file = "SVMpredG34MB_KD.RData")
 table(row.names(plot.data)==row.names(pd))
 plot.data$SVM_prilabKD <- pd$SVM_prilab
 plot.data$SVM_probKD <- pd$SVM_prob
-#### identify cells that are non-neuronal nromal
-plot.data$Nor <- "No"
-keep <- plot.data$SVM_prilabKD %in%  c("astrocyte",'mural/endoth',"immune","meningeal",
-                                       "oligo_progenitor","erythroid","oligodendrocyte",
-                                       "glioblast")
-table(keep)
-plot.data[keep,"Nor"] <- "Yes"
 save(plot.data, file = "plotdataG34_SVM.RData")
 
 q()
