@@ -1,6 +1,8 @@
 # G34MBGRN
 This repository contains R and Python scripts used for data analysis for the following manuscript:
-xxx
+
+**Gene regulatory network landscape of Group 3/4 medulloblastoma.** (https://doi.org/10.1101/2024.02.09.579680)
+
 
 ## List of folders in this repository are:
 1. RNA: This contains scripts for processing snRNA-Seq data
