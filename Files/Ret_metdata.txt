@@ -1,0 +1,11 @@
+Samples	Age	Sex	ATAC	RNA
+D53	7W	F	Yes	Yes
+D59	8W	M	Yes	Yes
+D74	10W	M	Yes	Yes
+D78	11W	M	Yes	Yes
+D113	16W	F	Yes	Yes
+D132	18W	M	Yes	Yes
+Hu5	54y	M	Yes	Yes
+Hu7	50y	F	Yes	Yes
+Hu8	52y	F	Yes	No
+Hu37	25y	M	No	Yes
