@@ -11,4 +11,5 @@ This repository contains R and Python scripts used for data analysis for the fol
 4. Retina: This contains scripts for analysis of snRNA-Seq and snATAC-Seq data for Retina
 5. Bulk: This contains scripts for bulk RNA-Seq data analysis
 6. Misc: This contains miscellaneous scripts
-7. Files: This contains some files required by other scripts
+7. Misc2: This contain miscellaneous scripts used in revision
+8. Files: This contains some files required by other scripts
